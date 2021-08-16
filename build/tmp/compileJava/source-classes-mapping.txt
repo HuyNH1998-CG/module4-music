@@ -6,9 +6,9 @@ Model/Music.java
  Model.Music
 Config/AppInit.java
  Config.AppInit
+Model/Category.java
+ Model.Category
 Service/MusicService.java
  Service.MusicService
 Controller/MController.java
  Controller.MController
-Model/Category.java
- Model.Category

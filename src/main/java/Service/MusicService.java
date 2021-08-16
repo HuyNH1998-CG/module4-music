@@ -7,8 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MusicService {
-    private List<Music> musicList = new ArrayList<>();
-    private List<Category> categoryList = new ArrayList<>();
+    private static List<Music> musicList = new ArrayList<>();
+    private static List<Category> categoryList = new ArrayList<>();
+    static {
+        categoryList.add(new Category("Jazz"));
+        categoryList.add(new Category("Rock"));
+        categoryList.add(new Category("Pop"));
+        categoryList.add(new Category("US"));
+        categoryList.add(new Category("JP"));
+        categoryList.add(new Category("KR"));
+    }
     public List<Music> findAll(){
         return musicList;
     }

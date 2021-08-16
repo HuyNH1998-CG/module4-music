@@ -17,13 +17,15 @@
     <th>Name</th>
     <th>Singer</th>
     <th>Category</th>
+    <th>URL</th>
   </tr>
   </thead>
   <tbody>
   <tr th:each="song : ${musics}">
     <td th:text="${song.name}"></td>
     <td th:text="${song.singer}"></td>
-    <td th:text="${song.getType()}"></td>
+    <td th:text="${song.type}"></td>
+    <td th:text="${song.link}"></td>
   </tr>
   </tbody>
 </table>

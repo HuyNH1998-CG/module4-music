@@ -18,7 +18,7 @@ import java.util.List;
 
 @Controller
 public class MController {
-    @Value("${file-upload")
+    @Value("${file-upload}")
     private String fileUpload;
 
     private final MusicService service = new MusicService();
@@ -32,9 +32,9 @@ public class MController {
     }
     @GetMapping("/create")
     public ModelAndView showCreateForm(@ModelAttribute("musicForm") MusicForm form){
-        List<Category> list = service.findAllCat();
+        List<Category> categoryList = service.findAllCat();
         ModelAndView modelAndView = new ModelAndView("/create");
-        modelAndView.addObject("categories",list);
+        modelAndView.addObject("categories",categoryList);
         return modelAndView;
     }
     @PostMapping("/save")
@@ -48,7 +48,7 @@ public class MController {
         }
         Music music = new Music(form.getId(),form.getName(),form.getSinger(),form.getType(),fileName);
         service.save(music);
-        ModelAndView modelAndView = new ModelAndView("/create");
+        ModelAndView modelAndView = new ModelAndView("redirect:/home");
         modelAndView.addObject("message", "Create success");
         return modelAndView;
     }

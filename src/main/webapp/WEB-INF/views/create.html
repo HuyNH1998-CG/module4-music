@@ -12,7 +12,7 @@
     </a>
 </p>
 <div id="form">
-    <form action="/save" th:object="${musicForm}" method="Post" novalidate="novalidate"
+    <form action="/save" th:object="${musicForm}" method="POST" novalidate="novalidate"
           enctype="multipart/form-data">
         <input type="hidden" th:field="*{id}">
         <div>
@@ -29,9 +29,11 @@
         </div>
         <div>
             <label>Type</label>
-            <div th:each="category : ${categories}">
-                <input type="checkbox" th:field="*{type}" th:value="${category.name}" th:text="${category.name}">
-            </div>
+            <li th:each="ctg : ${categories}">
+                <input type="checkbox" th:field="*{type}" th:value="${ctg.name}">
+                <label th:text="${ctg.name}"></label>
+            </li>
+
         </div>
         <button type="submit">Save</button>
     </form>
