@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h3>Music Management</h3>
+<p>
+  <a th:href="@{/create}">
+    Add new Song
+  </a>
+</p>
+<table id = "Song">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Singer</th>
+    <th>Category</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="song : ${musics}">
+    <td th:text="${song.name}"></td>
+    <td th:text="${song.singer}"></td>
+    <td th:text="${song.getType()}"></td>
+  </tr>
+  </tbody>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
