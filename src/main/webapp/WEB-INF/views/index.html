@@ -22,10 +22,18 @@
   </thead>
   <tbody>
   <tr th:each="song : ${musics}">
-    <td th:text="${song.name}"></td>
-    <td th:text="${song.singer}"></td>
-    <td th:text="${song.type}"></td>
-    <td th:text="${song.link}"></td>
+    <td th:text="*{song.name}"></td>
+    <td th:text="*{song.singer}"></td>
+    <td th:text="*{song.type}"></td>
+    <td th:text="*{song.link}"></td>
+    <td>
+      <a th:href="@{/edit(id=${song.id})}">Edit</a>
+      <a th:href="@{/delete(id=${song.id})}">Delete</a>
+    </td>
+    <td>
+      <audio controls>
+        <source  th:src="@{'/res/'+${song.link}}" >
+      </audio></td>
   </tr>
   </tbody>
 </table>

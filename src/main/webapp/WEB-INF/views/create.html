@@ -29,11 +29,9 @@
         </div>
         <div>
             <label>Type</label>
-            <li th:each="ctg : ${categories}">
-                <input type="checkbox" th:field="*{type}" th:value="${ctg.name}">
-                <label th:text="${ctg.name}"></label>
-            </li>
-
+            <select th:field="*{type}">
+                <option th:each="ctg : ${categories}" th:value="${ctg.name}" th:text="${ctg.name}"></option>
+            </select>
         </div>
         <button type="submit">Save</button>
     </form>

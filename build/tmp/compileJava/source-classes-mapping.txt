@@ -1,14 +1,16 @@
-Model/MusicForm.java
- Model.MusicForm
-Config/AppConfig.java
- Config.AppConfig
-Model/Music.java
- Model.Music
-Config/AppInit.java
- Config.AppInit
-Model/Category.java
- Model.Category
-Service/MusicService.java
- Service.MusicService
-Controller/MController.java
- Controller.MController
+Big/Model/MusicForm.java
+ Big.Model.MusicForm
+Big/Config/AppConfig.java
+ Big.Config.AppConfig
+Big/Config/AppInit.java
+ Big.Config.AppInit
+Big/Model/Music.java
+ Big.Model.Music
+Big/Model/Category.java
+ Big.Model.Category
+Big/Service/CustomerS.java
+ Big.Service.CustomerS
+Big/Controller/MController.java
+ Big.Controller.MController
+Big/Service/MusicService.java
+ Big.Service.MusicService
