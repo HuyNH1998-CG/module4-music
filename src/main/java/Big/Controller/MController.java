@@ -66,12 +66,20 @@ public class MController {
         modelAndView.addObject("message", "Create success");
         return modelAndView;
     }
+    @PostMapping("/edit")
+    public ModelAndView editMusic(@ModelAttribute("musicForm") MusicForm form,@RequestParam int id) {
+        String fileName = processFile(form);
+        Music music = new Music(form.getId(), form.getName(), form.getSinger(), form.getType(), fileName);
+        customerS.update(id,music);
+        ModelAndView modelAndView = new ModelAndView("redirect:/home");
+        modelAndView.addObject("message", "Create success");
+        return modelAndView;
+    }
 
     @GetMapping("/delete")
     public ModelAndView delete(@RequestParam int id){
         customerS.remove(id);
         ModelAndView modelAndView = new ModelAndView("redirect:/home");
-        modelAndView.addObject("message", "Create success");
         return modelAndView;
     }
 

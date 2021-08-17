@@ -49,12 +49,12 @@ public class MusicService implements Big.Service.CustomerS {
         try {
             session = sessionFactory.openSession();
             transaction = session.beginTransaction();
-            Music origin = findById(music.getId());
+            Music origin = new Music();
             origin.setName(music.getName());
             origin.setSinger(music.getSinger());
             origin.setType(music.getType());
             origin.setLink(music.getLink());
-            session.saveOrUpdate(origin);
+            session.save(origin);
             transaction.commit();
             return origin;
         } catch (Exception e){
@@ -81,12 +81,12 @@ public class MusicService implements Big.Service.CustomerS {
         try {
             session = sessionFactory.openSession();
             transaction = session.beginTransaction();
-            Music origin = findById(music.getId());
+            Music origin = findById(id);
             origin.setName(music.getName());
             origin.setSinger(music.getSinger());
             origin.setType(music.getType());
             origin.setLink(music.getLink());
-            session.saveOrUpdate(origin);
+            session.update(music);
             transaction.commit();
             return origin;
         } catch (Exception e){
